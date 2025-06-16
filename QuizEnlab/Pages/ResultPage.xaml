@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizEnlab.Pages.ResultPage"
+             BackgroundColor="#1D2240"
+             Title="Quiz Results">
+
+    <!-- Results Section -->
+    <Grid x:Name="ResultsSection" 
+              VerticalOptions="Center" 
+              HorizontalOptions="Center">
+        <Border BackgroundColor="White"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="30"
+                    WidthRequest="300">
+            <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+                <!-- Success Icon -->
+                <Image x:Name="ResultIcon"
+                           HeightRequest="80"
+                           WidthRequest="80"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+
+                <!-- Result Title -->
+                <Label x:Name="ResultTitle"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+
+                <!-- Result Message -->
+                <Label x:Name="ResultMessage"
+                           FontSize="16"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"/>
+
+                <!-- Score -->
+                <Label x:Name="ScoreLabel"
+                           FontSize="16"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+
+                <!-- Buttons Container -->
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <!-- Play Again Button -->
+                    <Button Text="Play Again"
+                            BackgroundColor="#FF3B30"
+                            TextColor="White"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            HorizontalOptions="Fill"
+                            Margin="0,10,0,0"
+                            Clicked="OnTryAgainClicked"/>
+                    
+                    <!-- Review Answers Button -->
+                    <Button Text="Review Answers"
+                            BackgroundColor="#007AFF"
+                            TextColor="White"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            HorizontalOptions="Fill"
+                            Margin="0,10,0,0"
+                            Clicked="OnReviewAnswersClicked"/>
+                    
+                    <!-- Exit Button -->
+                    <Button Text="Exit"
+                            BackgroundColor="#8E8E93"
+                            TextColor="White"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            HorizontalOptions="Fill"
+                            Margin="0,10,0,0"
+                            Clicked="OnExitClicked"/>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

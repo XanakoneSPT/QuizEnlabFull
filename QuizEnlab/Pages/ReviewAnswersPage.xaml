@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizEnlab.Pages.ReviewAnswersPage"
+             Title="Review Answers"
+             BackgroundColor="#1D2240">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Header -->
+            <Label Text="Quiz Review"
+                   TextColor="White"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,20"/>
+
+            <!-- Questions Collection -->
+            <CollectionView x:Name="QuestionsCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="White"
+                                StrokeShape="RoundRectangle 15"
+                                Padding="15"
+                                Margin="0,0,0,15">
+                            <VerticalStackLayout Spacing="10">
+                                <!-- Question Number -->
+                                <Label Text="{Binding QuestionNumber, StringFormat='Question {0}'}"
+                                       TextColor="#007AFF"
+                                       FontSize="16"
+                                       FontAttributes="Bold"/>
+                                
+                                <!-- Question Text -->
+                                <Label Text="{Binding QuestionText}"
+                                       TextColor="Black"
+                                       FontSize="16"/>
+                                
+                                <!-- Your Answer -->
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="Your Answer:"
+                                           TextColor="#666666"
+                                           FontSize="14"/>
+                                    <Label Text="{Binding UserAnswer}"
+                                           TextColor="{Binding IsCorrect, Converter={StaticResource BoolToColorConverter}}"
+                                           FontAttributes="Bold"
+                                           FontSize="16"/>
+                                </VerticalStackLayout>
+                                
+                                <!-- Correct Answer (only shown if answer was incorrect) -->
+                                <VerticalStackLayout Spacing="5" IsVisible="{Binding IsCorrect, Converter={StaticResource InverseBoolConverter}}">
+                                    <Label Text="Correct Answer:"
+                                           TextColor="#666666"
+                                           FontSize="14"/>
+                                    <Label Text="{Binding CorrectAnswer}"
+                                           TextColor="#28CD41"
+                                           FontAttributes="Bold"
+                                           FontSize="16"/>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Back Button -->
+            <Button Text="Back to Results"
+                    BackgroundColor="#007AFF"
+                    TextColor="White"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    HorizontalOptions="Fill"
+                    Margin="0,10,0,20"
+                    Clicked="OnBackClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage> 

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:QuizEnlab"
+             BackgroundColor="#1D2240"
+             x:Class="QuizEnlab.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StartQuizButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#6200EE" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Center"
+            Padding="30,0"
+            Spacing="25">
+
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+            
+            <Button
+                x:Name="CounterBtn"
+                Text="Start Quiz" 
+                Style="{StaticResource StartQuizButtonStyle}"
+                Clicked="onStartClicked"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                 />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
