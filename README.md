@@ -13,18 +13,6 @@ A .NET MAUI-based quiz application that allows users to test their knowledge thr
 - Answer review functionality
 - Option to retry or exit after completion
 
-## Screenshots
-
-[Add screenshots here]
-
-## User Flow Diagram
-
-[Add user flow diagram here]
-
-## Database Schema
-
-[Add E-R diagram here]
-
 ## Technical Implementation
 
 ### Getting Questions
